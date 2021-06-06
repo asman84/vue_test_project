@@ -2,6 +2,8 @@
 
     <div class="col-12">
         <h3>Task list</h3>
+        <h4>computed: {{ ch_computed }}</h4>
+        <h4>computed 2 {{ ch_computed2 }}</h4>
         <v-data-table
             :headers="headers"
             :items="tasksList"
@@ -22,24 +24,24 @@ export default {
         return {
             headers: [
                 {
-                    text:'id',
-                    value:'id',
+                    text: 'id',
+                    value: 'id',
                 },
                 {
-                    text:'username',
-                    value:'username'
+                    text: 'username',
+                    value: 'username'
                 },
                 {
-                    text:'text',
-                    value:'text'
+                    text: 'text',
+                    value: 'text'
                 },
                 {
-                    text:'email',
-                    value:'email'
+                    text: 'email',
+                    value: 'email'
                 },
                 {
-                    text:'status',
-                    value:'status'
+                    text: 'status',
+                    value: 'status'
                 }
             ]
         }
@@ -49,10 +51,20 @@ export default {
         ...mapActions(['getTasks'])
     },
     computed: {
+        ch_computed() {
+            console.log('computed 1')
+            return "computed "
+        },
         ...mapState(['tasksList']),
+        ch_computed2() {
+            console.log('computed 2',this.tasksList)
+            return "computed 2 "
+        },
     },
     created() {
+        console.log('created 1')
         this.getTasks()
+        console.log('created 2')
     }
 }
 </script>
