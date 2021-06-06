@@ -9,6 +9,7 @@
             :items="tasksList"
             :server-items-length="2"
             class="elevation-1"
+            :loading="loading"
         ></v-data-table>
     </div>
 </template>
@@ -55,7 +56,7 @@ export default {
             console.log('computed 1')
             return "computed "
         },
-        ...mapState(['tasksList']),
+        ...mapState(['tasksList','loading']),
         ch_computed2() {
             console.log('computed 2',this.tasksList)
             return "computed 2 "

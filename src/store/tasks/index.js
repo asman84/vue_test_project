@@ -6,7 +6,8 @@ import getters from './getters'
 export default {
     namespaced:true,
     statetaskStore: {
-        tasksList:[]
+        tasksList:[],
+        loading:false,
     },
     mutations,
     actions,
