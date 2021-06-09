@@ -12,7 +12,7 @@ export default new Router({
                 {
                     path: "/",
                     name: "tasks-list",
-                    component: () => import("@/views/tasks/TaskList")
+                    component: () => import("@/views/pages/tasks/TaskList")
                 }
             ]
         }

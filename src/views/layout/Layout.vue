@@ -1,9 +1,6 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <router-view/>
-        </div>
-    </div>
+
+    <router-view/>
 </template>
 
 <script>
